@@ -52,10 +52,11 @@ https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=260091
 3. `sudo checkinstall`
 
  We use checkinstall instead of make install in order to create a .deb
-package that can be managed with your package manager. When using checkinstall,
-you may want to change the version number to something like 1.1 so that
-your package manager does not try replacing your patched installation with 
-an unpatched version from another repository.
+package that can be managed and uninstalled with your package manager. 
+When using checkinstall, you may want to change the name to 
+imwheel-exclude-patched so that your package manager does not try 
+replacing your patched installation with an unpatched version of imwheel 
+from another repository.
 
 4. `sudo rm /etc/X11/imwheel/imwheelrc`
 
