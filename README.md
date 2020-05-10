@@ -44,16 +44,16 @@ Resolve any errors by Googling them. Repeat `./configure` until it reports no fu
 
 We use `checkinstall` instead of `make install` to create a portable `.deb` package.
 
-In `checkinstall`, use option `2` to rename the package to `imwheel-exclude-patched`.
+5. In `checkinstall`, use option `2` to rename the package to `imwheel-exclude-patched`.
 
-Use option `3` to change the version number to `1`.
+6. Use option `3` to change the version number to `1`.
 
-Press Enter to compile.
+7. Press Enter to compile.
 
-5. `sudo rm /etc/X11/imwheel/imwheelrc`
+8. `sudo rm /etc/X11/imwheel/imwheelrc`
 
-This default `.imwheelrc` file contains several configuration examples. You likely do not want them running on your system. After removing this file, create a blank `.imwheelrc` file in your home directory instead.
+This default `.imwheelrc` file contains several configuration examples. You likely do not want them running on your system. After removing this file, create a `.imwheelrc` file in your home directory instead.
 
-6. `imwheel --kill`
+9. `imwheel --kill`
 
 to start a new instance.
