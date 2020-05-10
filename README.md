@@ -2,7 +2,7 @@
 
 This project is a fork of `imwheel-1.0.0pre12`, [imwheel's](http://imwheel.sourceforge.net/) final official release. 
 
-It contains only one change — a patch that repairs imwheel's broken `@Exclude` command.
+It contains only one change — a patch that repairs imwheel's broken `@Exclude` command. This lets imwheel successfully re-grab windows after focusing on an `@Exclude`d window.
 
 ```
 Description: imwheel ignores FocusOut events, fix that
@@ -24,9 +24,7 @@ Description: imwheel ignores FocusOut events, fix that
  	{
 ```
 
-This patch lets imwheel re-grab a window after focusing on an `@Exclude`d window.
-
-Milko Krachounov [wrote this patch](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=260091). I have simply pre-applied it and modernized the installation instructions.
+Milko Krachounov [wrote this patch](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=260091). I have simply pre-applied it and updated the installation instructions.
 
 ## Compile and install (tested on Ubuntu 18.04): 
 
