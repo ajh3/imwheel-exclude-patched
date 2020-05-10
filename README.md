@@ -28,30 +28,30 @@ Milko Krachounov [wrote this patch](https://bugs.debian.org/cgi-bin/bugreport.cg
 
 ## Compile and install (tested on Ubuntu 18.04): 
 
-1. `sudo apt install checkinstall libx11-dev libxtst-dev libxmu-dev`
+**1. `sudo apt install checkinstall libx11-dev libxtst-dev libxmu-dev`**
 
 to install the compilation dependencies.
 
-2. `cd` to the `imwheel-exclude-patched-master` folder.
+**2. `cd` to the `imwheel-exclude-patched-master` folder.**
 
-3. `./configure`
+**3. `./configure`**
 
 Resolve any errors by Googling them. Repeat `./configure` until it reports no further errors.
 
-4. `sudo checkinstall`
+**4. `sudo checkinstall`**
 
 We use `checkinstall` instead of `make install` to create a portable `.deb` package.
 
-5. In `checkinstall`, use option `2` to rename the package to `imwheel-exclude-patched`.
+**5. In `checkinstall`, use option `2` to rename the package to `imwheel-exclude-patched`.**
 
-6. Use option `3` to change the version number to `1`.
+**6. Use option `3` to change the version number to `1`.**
 
-7. Press Enter to compile.
+**7. Press Enter to compile.**
 
-8. `sudo rm /etc/X11/imwheel/imwheelrc`
+**8. `sudo rm /etc/X11/imwheel/imwheelrc`**
 
 This default `.imwheelrc` file contains several configuration examples. You likely do not want them running on your system. After removing this file, create a `.imwheelrc` file in your home directory instead.
 
-9. `imwheel --kill`
+**9. `imwheel --kill`**
 
 to start a new instance.
