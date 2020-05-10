@@ -1,12 +1,8 @@
 # imwheel-exclude-patched
 
-This project is a fork of imwheel-1.0.0pre12, the last official imwheel 
-release from 2004. 
+This project is a fork of `imwheel-1.0.0pre12`, [imwheel's](http://imwheel.sourceforge.net/) final official release. 
 
-http://imwheel.sourceforge.net/
-
-The only change is that the following patch has been applied, to fix 
-imwheel's broken `@Exclude` command.
+It contains only one change — a patch that repairs imwheel's broken `@Exclude` command.
 
 ```
 Description: imwheel ignores FocusOut events, fix that
@@ -28,50 +24,36 @@ Description: imwheel ignores FocusOut events, fix that
  	{
 ```
 
-Without this patch, imwheel never successfully re-grabs a window after
-you focus on an excluded window.
+This patch lets imwheel re-grab a window after focusing on an `@Exclude`d window.
 
-This patch was originally written by Milko Krachounov and posted at the link 
-below. I claim no ownership over it. All I've done is apply it and create a 
-repository with modern install instructions for Ubuntu, which I hope is 
-helpful to others & easier to find on Google.
- 
-https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=260091
+Milko Krachounov [wrote this patch](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=260091). I have simply pre-applied it and modernized the installation instructions.
 
-## To compile and install (tested on Ubuntu 18.04): 
+## Compile and install (tested on Ubuntu 18.04): 
 
 1. `sudo apt install checkinstall libx11-dev libxtst-dev libxmu-dev`
 
- to install necessary dependencies for compilation.
+to install the compilation dependencies.
 
-2. `./configure `
+2. `cd` to the `imwheel-exclude-patched-master` folder.
 
- If any errors occur, resolve them by Googling and keep running 
-./configure until they are gone.
+3. `./configure`
 
-3. `sudo checkinstall`
+Resolve any errors by Googling them. Repeat `./configure` until it reports no further errors.
 
- We use checkinstall instead of make install in order to create a .deb
-package that can be managed and uninstalled with your package manager. 
-When using checkinstall, you may want to change the name to 
-imwheel-exclude-patched so that your package manager does not try 
-replacing your patched installation with an unpatched version of imwheel 
-from another repository.
+4. `sudo checkinstall`
 
-4. `sudo rm /etc/X11/imwheel/imwheelrc`
+We use `checkinstall` instead of `make install` to create a portable `.deb` package.
 
- By default, there is am imwheelrc file with many example settings, which
-you likely do not want running on your system. Delete this file and 
-add a .imwheelrc file to your home directory instead.
+In `checkinstall`, use option `2` to rename the package to `imwheel-exclude-patched`.
 
-5. `imwheel --kill `
+Use option `3` to change the version number to `1`.
 
- to start a new instance.
+Press Enter to compile.
 
-That's it! You may also want to add imwheel to your system startup commands.
+5. `sudo rm /etc/X11/imwheel/imwheelrc`
 
-It no longer appears necessary on newer versions of Ubuntu to perform
-the steps in the original README file related to mouse buttons 4 and 5, etc.
+This default `.imwheelrc` file contains several configuration examples. You likely do not want them running on your system. After removing this file, create a blank `.imwheelrc` file in your home directory instead.
 
--Aaron Halbert
-8/8/18
+6. `imwheel --kill`
+
+to start a new instance.
